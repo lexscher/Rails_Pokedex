@@ -3,5 +3,5 @@
 <h3>These are the pokemon you have seen...</h3>
 
 <% @pokemons.each do |pokemon| %>
-    <p> <%= pokemon.name %></p>
+    <div class="link-pokemon"> <%= link_to pokemon.name, pokemon %> </div>
 <% end %>
