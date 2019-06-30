@@ -8,6 +8,10 @@ class PokemonsController < ApplicationController
         @pokemon = poke_one
     end
 
+    def new
+        @pokemon = poke_one
+    end
+
 
 
 

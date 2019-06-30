@@ -1,0 +1,12 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: $default-font-weight;
+  font-size: $default-font-size;
+  background: $color-primary-light;
+  color: $color-secondary-dark;
+}
