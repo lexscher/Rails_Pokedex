@@ -1,7 +1,11 @@
 class PokemonsController < ApplicationController
 
     def index
-        @pokemons = poke_all
+        if params[:search_term]
+            @pokemons = Pokemon.where("name like ?", "%#{params[:search_term]}%")
+        else
+            @pokemons = poke_all
+        end
     end
 
     def show
@@ -17,6 +21,13 @@ class PokemonsController < ApplicationController
         redirect_to pokemon_path(@pokemon)
     end
 
+    def edit
+        @pokemon = poke_one
+    end
+
+    def put
+
+    end
 
 
     private

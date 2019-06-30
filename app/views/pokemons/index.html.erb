@@ -4,6 +4,13 @@
 
 <h3>These are the pokemon you have seen...</h3>
 
+<%= form_tag "/pokemons", method: :get do %>
+
+  <%= text_field_tag :search_term %>
+  <%= submit_tag "Look for a Pokemon!" %>
+
+<% end %>
+
 <% @pokemons.each do |pokemon| %>
     <div class="link-pokemon"> <%= link_to pokemon.name, pokemon %> </div>
 <% end %>
