@@ -11,7 +11,8 @@ body {
   color: $color-secondary-dark;
 }
 
-form {
+form,
+.one-column {
   display: flex;
   flex-direction: column;
 }

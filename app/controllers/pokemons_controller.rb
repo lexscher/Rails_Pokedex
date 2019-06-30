@@ -25,8 +25,18 @@ class PokemonsController < ApplicationController
         @pokemon = poke_one
     end
 
-    def put
+    def update
+        @pokemon = poke_one
+        @pokemon.update(pokemon_params)
+        # @pokemon = Pokemon.update(pokemon_params) Keeping this mistake in here to REMEMBER
+        # I would update ALL the pokemon instead of the Single pokemon I'm working on 🤦🏿‍♂️
+        redirect_to pokemon_path(@pokemon)
+    end
 
+    def destroy
+        @pokemon = poke_one
+        @pokemon.destroy
+        redirect_to pokemons_path
     end
 
 

@@ -1,8 +1,8 @@
 <div>
     <header>
-        <%= render "shared/back_button" %>
+        <%= render "shared/home_button" %>
     </header>
-    <div class="main__show">
+    <div class="main__show one-column">
         <h1> <%= @pokemon.name %> </h1>
         <img src="<%= @pokemon.sprite_url %>" alt="<%= @pokemon.name %>" width="280">
         <div class="pokemon-stats">
@@ -13,6 +13,11 @@
             <h4 class="description">Description</h4>
             <p> <%= @pokemon.description %> </p>
         </div>
+    </div>
+
+    <div class="one-column">
+        <%= link_to "Edit this pokemon", edit_pokemon_path(@pokemon) %>
+        <%= button_to "Release this pokemon", pokemon_path(@pokemon), method: :delete %>
     </div>
 
 </div>
