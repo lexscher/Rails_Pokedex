@@ -9,9 +9,13 @@ class PokemonsController < ApplicationController
     end
 
     def new
-        @pokemon = poke_one
+        @pokemon = Pokemon.new
     end
 
+    def create
+        @pokemon = Pokemon.create(pokemon_params)
+        redirect_to pokemon_path(@pokemon)
+    end
 
 
 
@@ -26,4 +30,8 @@ class PokemonsController < ApplicationController
         poke_all.find(params[:id])
     end
 
+    # Pokemon params for CREATE
+    def pokemon_params
+        params.require(:pokemon).permit(:name, :weight, :description, :poke_type, :sprite_url)
+    end
 end

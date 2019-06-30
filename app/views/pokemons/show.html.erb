@@ -1,8 +1,6 @@
 <div>
     <header>
-        <button>
-            <%= link_to "back", pokemons_path%>
-        </button>
+        <%= render "shared/back_button" %>
     </header>
     <div class="main__show">
         <h1> <%= @pokemon.name %> </h1>
